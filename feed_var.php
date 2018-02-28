@@ -16,26 +16,24 @@
   $response3 = file_get_contents($request3);
   array_push($xml, simplexml_load_string($response3));
 
-
-  echo '<pre>';
-  var_dump($xml);
-  echo '</pre>';
-
   print '<h1>' . $xml->channel->title . '</h1>';
 
-/*
 
-  foreach($xml->channel->item->title as $feed)
+
+  foreach($xml as $feed)
   {
-     foreach($feed as $story){
+      print '<h1>' . $feed->channel->title . '</h1>';
+      /*echo '<pre>';
+      var_dump($feed);
+      echo '</pre>';*/
+      foreach($feed->channel->item as $story)
+      {
         echo '<a href="' . $story->link . '">' . $story->title . '</a><br />'; 
         echo '<p>' . $story->description . '</p><br /><br />';
-         
-     }
+      }
       
   }
 
-*/
 
 
 /*  print '<h1>' . $xml->channel->title . '</h1>';
