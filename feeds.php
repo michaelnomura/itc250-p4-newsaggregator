@@ -80,7 +80,7 @@ function showFeeds()
 			echo '<tr>
 					<td>'	
 				     . (int)$row['FeedID'] . '</td>
-				    <td><a href="' . VIRTUAL_PATH . 'demo/feed_view.php?id=' . (int)$row['FeedID'] . '">' . dbOut($row['FeedName']) . '</a></td>
+				    <td><a href="feed_view.php?id=' . (int)$row['FeedID'] . '">' . dbOut($row['FeedName']) . '</a></td>
 				    <td>' . dbOut($row['CatagoryID']) . '</td>
 				    <td>' . dbOut($row['FeedURL']) . '</td>
 				</tr>
@@ -90,9 +90,12 @@ function showFeeds()
 	}else{//no records
       echo '<div align="center"><h3>Currently No Feeds in Database.</h3></div>';
 	}
-	echo '<div align="center"><a href="' . THIS_PAGE . '?act=add">ADD FEED</a></div>';
+	/*
+    echo '<div align="center"><a href="' . THIS_PAGE . '?act=add">ADD FEED</a></div>';
 	@mysqli_free_result($result); //free resources
+    */
 	get_footer();
+    
 }
 
 function addForm()
