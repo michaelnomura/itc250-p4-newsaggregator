@@ -1,45 +1,18 @@
 <?php
 /**
- * demo_add.php is a single page web application that allows us to add a new customer to 
- * an existing table
- *
- * This page is based on demo_edit.php
- *
- * Any number of additional steps or processes can be added by adding keywords to the switch 
- * statement and identifying a hidden form field in the previous step's form:
- *
- *<code>
- * <input type="hidden" name="act" value="next" />
- *</code>
- * 
- * The above code shows the parameter "act" being loaded with the value "next" which would be the 
- * unique identifier for the next step of a multi-step process
- *
+ * feeds.php is a landing page with links to three catagories of RSS feeds
+ 
  * @package nmCommon
- * @author Bill Newman <williamnewman@gmail.com>
- * @version 1.12 2012/02/27
- * @link http://www.newmanix.com/
+ * @author ITC250 Group 3 Aliya Asken, Jill Beasley, Michael Nomura, Marcus Price
+ * @version 0.7
  * @license https://www.apache.org/licenses/LICENSE-2.0
- * @todo add more complicated checkbox & radio button examples
+ * @todo 
  */
 
 # '../' works for a sub-folder.  use './' for the root  
 require 'config_inc.php';
 #require '../inc_0700/config_inc.php'; #provides configuration, pathing, error handling, db credentials
  
-/*
-$config->metaDescription = 'Web Database ITC281 class website.'; #Fills <meta> tags.
-$config->metaKeywords = 'SCCC,Seattle Central,ITC281,database,mysql,php';
-$config->metaRobots = 'no index, no follow';
-$config->loadhead = ''; #load page specific JS
-$config->banner = ''; #goes inside header
-$config->copyright = ''; #goes inside footer
-$config->sidebar1 = ''; #goes inside left side of page
-$config->sidebar2 = ''; #goes inside right side of page
-$config->nav1["page.php"] = "New Page!"; #add a new page to end of nav1 (viewable this page only)!!
-$config->nav1 = array("page.php"=>"New Page!") + $config->nav1; #add a new page to beginning of nav1 (viewable this page only)!!
-*/
-
 //END CONFIG AREA ----------------------------------------------------------
 
 # Read the value of 'action' whether it is passed via $_POST or $_GET with $_REQUEST
