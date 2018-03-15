@@ -1,7 +1,15 @@
 <?
+require 'credentials_inc.php';
+require 'Feed.php';
+$iConn = IDB::conn();
+$myFeed = new Feed(1, $iConn); //feed class takes 2 params: the Id number of the feed and a mysqli db connection
+//$myFeed->showFeed(); //shows the feed
+$iConn->close(); //closes db connection
+
+
 //read-feed-simpleXML.php
 //our simplest example of consuming an RSS feed
-
+/*
   $xml = array();
 
   $request = "https://news.google.com/news/rss/headlines/section/topic/TECHNOLOGY?ned=us&hl=en&gl=US";
