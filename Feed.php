@@ -5,12 +5,6 @@
  *formatting for the news stories?
  */
 
-session_start();
-$conn = new mysqli('DB_SERVER', 'DB_USERNAME', 'DB_PASSWORD', 'DB_NAME'); //makes connection to DB
-$myFeed = new Feed(1, $conn); //feed class takes 2 params: the Id number of the feed and a mysqli db connection
-$myFeed->showFeed(); //shows the feed
-$conn->close(); //closes db connection
-
 class Feed
 {
   public $Id = 0;
@@ -20,9 +14,11 @@ class Feed
   public function __construct($Id, $conn)
   {
     $this->Id = $Id; //assigns object with unique feed ID (ID pulled from query string/first argument of constructor)
+
     $sql = 'SELECT * FROM p4_Feeds WHERE ID = "' . $this->Id . '"'; //sql command to get feed data
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
+
     $this->Title = $row['Title']; //sets object's title property from db
     $lastUpdated = strtotime($row['LastUpdated']); //stores the last update into a variable
 
