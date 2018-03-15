@@ -6,9 +6,8 @@
  */
 
 session_start();
-$conn = new mysqli('DB_SERVER', 'DB_USERNAME', 'DB_PASSWORD', 'DB_NAME'); //makes connection to DB
+$conn = new mysqli('DB_HOST', 'DB_USER', 'DB_PASSWORD', 'DB_NAME'); //makes connection to DB
 $myFeed = new Feed(1, $conn); //feed class takes 2 params: the Id number of the feed and a mysqli db connection
-$myFeed->showFeed(); //shows the feed
 $conn->close(); //closes db connection
 
 class Feed
